@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Maçãs</title>
+		<script type="text/javascript">
+			function maca()
+			{
+				var num1 = parseFloat(document.getElementById("numero1").value);
+				var final = 0;
+				 if(num1<12)
+				 	final=num1*1.30;
+				 else
+				 	final=num1*1.00;
+				document.getElementById("resultado").innerHTML = "O custo total da compra é "+final;
+			}
+	    </script>
+	</head>
+	<body>
+		<h3>As maçãs custam R$1,30 cada se forem compradas menos de uma dúzia, e R$1,00 se forem compradas pelo menos 12. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o custo total da compra.</h3>
+		<h1 id="resultado"></h1>
+		<label>Número de maçãs compradas:</label>
+		<input type="number" id="numero1"/>
+		<button onclick="maca()">Executar</button>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Desafio RocketSeat JS 1 - Atividade 02 </title>
+</head>
+<body>
+    <p> Crie uma função que dado um intervlo (entre x e y) exiba todos os números pares:</p> 
+     <ul id="lista">    
+     </ul>
+     <p id="msg">
+     </p>
+</body>
+
+<script>
+    function pares (x, y){
+        var pares = [];
+        for(i=x; i<=y; i++){
+            if (i%2==0){
+                pares.push(i);
+            }
+        }
+        return pares.toString();
+    }
+    var result = pares(1, 1200);
+    var resultado_array = result.split(",");
+    resultado_array.forEach(function(numero){
+        var elemento_li = document.createElement("LI");
+        elemento_li.innerHTML = numero;
+        document.getElementById("lista").appendChild(elemento_li);
+    });
+   
+</script>
+</html>

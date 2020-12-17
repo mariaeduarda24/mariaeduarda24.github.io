@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Temperatura</title>
+		<script type="text/javascript">
+			function celsius()
+			{
+				var far = parseFloat(document.getElementById("numero1").value);
+				var cel = (far*5-160)/9;
+				document.getElementById("resultado").innerHTML = "A temperatura em Celsius é "+cel;
+			}
+	    </script>
+	</head>
+	<body>
+        <h3> Escreva um algoritmo para ler uma temperatura em graus Fahrenheit, calcular e escrever o valor correspondente em graus Celsius (baseado na fórmula abaixo): C/5=F-32/9. Observação: Para testar se sua resposta está correta saiba que 100C = 212F.</h3>
+		<h1 id="resultado"></h1>
+		<label>Temperatura em  Fahrenheit</label>
+		<input type="number" id="numero1"/>
+		<button onclick="celsius()">Executar</button>
+	</body>
+</html>

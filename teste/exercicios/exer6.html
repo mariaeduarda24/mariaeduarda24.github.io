@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Carro</title>
+		<script type="text/javascript">
+			function carro()
+			{
+				var num1 = parseFloat(document.getElementById("numero1").value);
+				var num2 = num1+(num1*28/100)+num1+(num1*45/100);
+				document.getElementById("resultado").innerHTML = "O novo salário é "+num2;
+			}
+	    </script>
+	</head>
+	<body>
+		<h3>O custo de um carro novo ao consumidor é a soma do custo de fábrica com porcentagem do distribuidor e dos impostos (aplicados ao custo de fábrica). Supondo que o percentual do distribuição seja 28% e os impostosbde 45%, escrever um algoritmo para ler o custo de fábrica de um carro, calcular e escrever o custo final ao consumidor.</h3>
+		<h1 id="resultado"></h1>
+		<label>Preço de fabrica</label>
+		<input type="number" id="numero1"/>
+		<button onclick="carro()">Executar</button>
+	</body>
+</html>

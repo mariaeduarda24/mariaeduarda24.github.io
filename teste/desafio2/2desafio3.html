@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desafio 3</title>
+  </head>
+  <body>
+    <p class="enunciado">
+    </p>
+    <div class="resultado"></div>
+  </body>
+  <script>
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+    var ul = document.createElement("ul");
+    document.querySelector(".resultado").appendChild(ul);
+    for (const nome of nomes) {
+    var li = document.createElement("li");
+    li.innerHTML = nome;
+    document.querySelector("ul").appendChild(li);
+}
+</script>
+</html>

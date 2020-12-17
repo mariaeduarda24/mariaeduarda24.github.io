@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Desafio 4</title>
+</head>
+<body>
+	<h3>Exercício 4:</h3>
+    <form action="#">
+    	<label>Insira os anos de estudo</label>
+    	<input type="number" min="0" id="input"/>
+    	<button type="submit" onclick="experiencia()">Enviar</button>
+    </form>
+    <p id="msg"></p>
+</body>
+<script>
+	function experiencia(){
+		var anos = document.getElementById("input").value;
+		var retorno = "";
+		if(anos >= 0 && anos <= 1){
+			returno = "Iniciante";
+		}
+		else if (anos > 1 && anos <= 3){
+			retorno = "Intermediário";
+		}
+		else if (anos > 3 && anos <= 6){
+			retorno = "Avançado"
+		}
+		else retorno = "Jedi Master";
+		document.getElementById("msg").innerHTML = "Seu nível é "+retorno;
+	}
+</script>
+</html>
+ 

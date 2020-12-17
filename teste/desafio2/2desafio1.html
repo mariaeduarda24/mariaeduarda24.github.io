@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desafio 1</title>
+  </head>
+  <body>
+    <p class="enunciado texto">
+      Crie um botão que ao ser clicado cria um novo elemento em tela com a forma
+      de um quadrado vermelho com 100px de altura e largura. Sempre que o botão
+      for clicado um novo quadrado deve aparecer na tela
+    </p>
+    <p id="msg">Aperte no botão para gerar um quadrado</p>
+    <button onclick="Quadrado()">Clica</button>
+    <div class="resultado"></div>
+  </body>
+  <script>
+    function Quadrado() {
+    var quadrado = document.createElement("div");
+    quadrado.style.width = "100px";
+    quadrado.style.height = "100px";
+    quadrado.style.backgroundColor = "red";
+    document.querySelector(".resultado").appendChild(quadrado);
+}</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hipotenusa</title>
+		<script type="text/javascript">
+			function hipotenusa()
+			{
+                var num1 = parseInt(document.getElementById("numero1").value);
+				var num2 = parseInt(document.getElementById("numero2").value);
+				var num3 = Math.sqrt(Math.pow(num1,2) + Math.pow(num2,2),2);
+				document.getElementById("resultado").innerHTML = "A hipotenusa é " +num3;
+            }
+        </script>
+	</head>
+	<body>
+		<h3> Considerando que dois números passados representam a dimensão dos catetos de um triângulo retângulo, faça um programa que calcule o tamanho da hipotenusa.</h3>
+		<h1 id="resultado"></h1>
+		<label>Primeiro cateto</label>
+		<input type="number" id="numero1"/>
+		<label>Segundo cateto</label>
+		<input type="number" id="numero2"/>
+		<button onclick="hipotenusa()">Executar</button>
+	</body>
+</html>

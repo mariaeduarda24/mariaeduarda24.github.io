@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Salário Vendedor</title>
+		<script type="text/javascript">
+			function vendedor()
+			{
+				var qtd_carro = parseFloat(document.getElementById("numero1").value);
+				var total_vendas = parseFloat(document.getElementById("numero2").value);
+				var sal_fixo = parseFloat(document.getElementById("numero3").value);
+				var valor_carro = parseFloat(document.getElementById("numero4").value);
+				var num5 = (sal_fixo+(qtd_carro*valor_carro)+(total_vendas*5/100));
+				document.getElementById("resultado").innerHTML = "O salário do vendedor é "+num5;
+			}
+	    </script>
+	</head>
+	<body>
+		<h3>Uma revendedora de carros usados paga a seus funcionários vendedores um salário fixo por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do valor das vendas por le efetuadas. Escrever um algoritmo que leia o número de carros por eles vendidos, o valor total de suas vendas, o salário fixo e o valor que ele recebe por carro vendido. Calcule e escreva o salário final do vendedor. </h3>
+		<h1 id="resultado"></h1>
+		<label>Números de carros vendidos</label>
+		<input type="number" id="numero1"/>
+		<label>Valor total de vendas</label>
+		<input type="number" id="numero2"/>
+		<label>Salário fixo</label>
+		<input type="number" id="numero3"/>
+		<label>Valor por carro vendido</label>
+		<input type="number" id="numero4"/>
+		
+		<button onclick="vendedor()">Executar</button>
+	</body>
+</html>

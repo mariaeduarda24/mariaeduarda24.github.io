@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desafio 2</title>
+  </head>
+  <body>
+    <p class="enunciado">
+    </p>
+    <p id="msg">Aperte no botão para gerar um quadrado</p>
+    <button onclick="geraQuadrado()">Clica</button>
+    <div class="resultado"></div>
+  </body>
+  <script>
+    function geraQuadrado() {
+  var quadrado = document.createElement("div");
+  quadrado.classList.add("quadrado");
+  quadrado.style.width = "100px";
+  quadrado.style.height = "100px";
+  quadrado.style.backgroundColor = "red";
+  document.querySelector(".resultado").appendChild(quadrado);
+  document
+    .querySelector(".quadrado")
+    .addEventListener("mouseover", function () {
+      mudaCorQuadrado(quadrado);
+    });
+}
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+function mudaCorQuadrado(quadrado) {
+  var newColor = getRandomColor();
+  quadrado.style.backgroundColor = newColor;
+}
+</script>
+</html>

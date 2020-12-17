@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Simulação 2</title>
+		<script type="text/javascript">
+			function MolparaVolume()
+			{
+			    var mol = document.getElementById("mol").value;
+				var resultado = 0;
+					if(mol!=0){
+						resultado = 44.8*mol;
+						document.getElementById("resultadoVolume1").innerHTML = "O volume de H2 é: "+resultado+"<br> Para calcular o volume de H2, basta multiplicar o número de mols de O2 pelo volume molar de H2 (22.4L/mol), na CNTP, multiplicado por seu coeficiente (2 mol).";
+					}
+					else
+						document.getElementById("resultadoVolume1").innerHTML = "Insira o número de mols de O2";
+            }
+
+            function VolumeparaMol()
+			{
+				var volume = document.getElementById("volume").value;
+				var resultado = 0;
+					if(volume!=0){
+						resultado = volume/44.8;
+						document.getElementById("resultadoMol").innerHTML = "O número de mols de O2 é "+resultado+"<br> Para calcular o número de mols de O2, basta dividir o volume de H2, pelo volume molar de H2 (22.4L/mol), na CNTP, multiplicado por seu coeficiente (2 mol).";
+					}
+					else
+						document.getElementById("resultadoMol").innerHTML = "Insira o volume de H2";
+            }
+           
+            function VolumeparaMassa()
+			{
+				var volume = document.getElementById("volume1").value;
+				var resultado = 0;
+					if(volume!=0){
+						resultado = (32*volume)/44.8;
+						document.getElementById("resultadoMassa").innerHTML = "O número de massa de O2 é "+resultado+" gramas <br> Para calcular a massa de O2, basta multiplicar o volume de H2O pela massa atômica O2 (32g/mol) e dividir pelo volume molar de H2O (22.4L/mol), na CNTP, multiplicado por seu coeficiente (2 mol).";
+					}
+					else
+						document.getElementById("resultadoMassa").innerHTML = "Insira o volume de H2O";
+            }
+
+             function MassaparaVolume()
+			{
+			    var massa = document.getElementById("massa").value;
+				var resultado = 0;
+					if(massa!=0){
+						resultado = (44.8*massa)/32;
+						document.getElementById("resultadoVolume2").innerHTML = "O volume de H2O é: "+resultado+"<br> Para calcular o volume de H2O, basta multiplicar a massa de O2 pelo volume molar de H2O (22.4L/mol), na CNTP, multiplicado por seu coeficiente (2 mol) e dividir pela massa atômica O2 (32g/mol).";
+					}
+					else
+						document.getElementById("resultadoVolume2").innerHTML = "Insira a massa em gramas de O2";
+            }
+		</script>
+	</head>
+
+	<body>
+		<h3>Esta simulação é capaz de fazer correlações diretas entre reagentes/produtos das reações químicas O2(mol) - H2(v) e H2O(v) - O2(g), respectivamente. Realize as simulações para ver como os calculos devem ser feitos.</h3>
+		<label>Insira o número de mol de O2 :</label>
+		<input type="number" id="mol"/>
+		<button onclick="MolparaVolume()">Executar</button>
+		<h1 id="resultadoVolume1"></h1>
+
+		<label>Insira o volume de H2:</label>
+		<input type="number" id="volume"/>
+		<button onclick="VolumeparaMol()">Executar</button>
+		<h1 id="resultadoMol"></h1>
+
+		<label>Insira o volume de H2O:</label>
+		<input type="number" id="volume1"/>
+		<button onclick="VolumeparaMassa()">Executar</button>
+		<h1 id="resultadoMassa"></h1>
+
+		<label>Insira a massa em gramas de O2 :</label>
+		<input type="number" id="massa"/>
+		<button onclick="MassaparaVolume()">Executar</button>
+		<h1 id="resultadoVolume2"></h1>
+	</body>
+</html>

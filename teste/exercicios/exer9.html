@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Média Ponderada</title>
+		<script type="text/javascript">
+			function media()
+			{
+				var nota1 = parseFloat(document.getElementById("numero1").value);
+				var nota2 = parseFloat(document.getElementById("numero2").value);
+				var nota3 = parseFloat(document.getElementById("numero3").value);
+				var final = ((nota1*2)+(nota2*3)+(nota3*5))/10;
+				document.getElementById("resultado").innerHTML = "A média final é "+final;
+			}
+	    </script>
+	</head>
+	<body>
+		<h3>Faça um algoritmo que leia três notas de um aluno, calcule a média final deste aluno. Considere que a média é ponderada e que o peso ds notas é 2, 3 e 5. Fórmula para o cálculo da média final é: ((n1*2)+(n2*3)+(n3*5))/10.</h3>
+		<h1 id="resultado"></h1>
+		<label>Primeira nota</label>
+		<input type="number" id="numero1"/>
+		<label>Segunda nota</label>
+		<input type="number" id="numero2"/>
+		<label>Terceira nota</label>
+		<input type="number" id="numero3"/>
+		<button onclick="media()">Executar</button>
+	</body>
+</html>

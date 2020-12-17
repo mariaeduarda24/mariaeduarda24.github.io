@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Salário</title>
+		<script type="text/javascript">
+			function salario()
+			{
+				var num1 = parseFloat(document.getElementById("numero1").value);
+				var num2 = parseFloat(document.getElementById("numero2").value);
+				var num3 = num1+(num1*num2/100);
+				document.getElementById("resultado").innerHTML = "O novo salário é "+num3;
+			}
+	    </script>
+	</head>
+	<body>
+		<h3>Escreva um algoritmo para ler o salário mensal atual de um funcionário e o percentual de reajuste. Calcular e escrever o valor do novo salário.</h3>
+		<h1 id="resultado"></h1>
+		<label>Salário atual</label>
+		<input type="number" id="numero1"/>
+		<label>Percentual de reajuste</label>
+		<input type="number" id="numero2"/>
+		<button onclick="salario()">Executar</button>
+	</body>
+</html>

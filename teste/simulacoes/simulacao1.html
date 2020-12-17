@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Simulação 1</title>
+		<script type="text/javascript">
+			function transformaMassa()
+			{
+			    var massa = document.getElementById("massa").value;
+				var resultado = 0;
+					if(massa!=0){
+						resultado = massa/24;
+						document.getElementById("resultadoMol").innerHTML = "O número de mol é: "+resultado;
+						document.getElementById("calculoMol").innerHTML = "Para calcular o número de mol do Magnésio, basta dividir a massa do elemento por sua massa atômica (aproximadamente 24)";
+					}
+					else
+						document.getElementById("resultadoMol").innerHTML = "Insira o número de massa do Magnésio em gramas";
+            }
+            function transformaMol()
+			{
+				var mol = document.getElementById("mol").value;
+				var resultado = 0;
+					if(mol!=0){
+						resultado = mol*24;
+						document.getElementById("resultadoMassa").innerHTML = "O número da massa é "+resultado +" gramas";
+						document.getElementById("calculoMassa").innerHTML = "Para calcular o número de mol do Magnésio, basta multiplicar o número de mols do elemento por sua massa atômica (aproximadamente 24)";
+					}
+					else
+						document.getElementById("resultadoMassa").innerHTML = "Insira o número de mols do Magnésio";
+            }
+		</script>
+	</head>
+	<body>
+		<h3>Esta simulação deve é capaz de converter a massa do Magnésio em um número de mols proporcional, e vice-versa. Realize a simulação para ver como o calculos devem ser realizados.</h3>
+		<label>Insira a massa de Magnésio em gramas:</label>
+		<input type="number" id="massa"/>
+		<button onclick="transformaMassa()">Executar</button>
+		<h1 id="resultadoMol"></h1>
+		<h1 id="calculoMol"></h1>
+		<label>Insira o mol de Magnésio:</label>
+		<input type="number" id="mol"/>
+		<button onclick="transformaMol()">Executar</button>
+		<h1 id="resultadoMassa"></h1>
+		<h1 id="calculoMassa"></h1>
+	</body>
+</html>
+	

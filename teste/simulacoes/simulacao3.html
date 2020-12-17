@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Simulação 3</title>
+		<script type="text/javascript">
+			function transforma(){
+				var molO2 = document.getElementById("molO2").value;
+				var molH2 = document.getElementById("molH2").value;
+				var resultado = 0;
+				var limitante = "";
+					if(molH2<2*molO2){
+						resultado = molH2*18;
+						limitante = "H2";
+					}
+					if(molH2>(2*molO2)){
+						resultado = (molO2*36)/32;
+						limitante = "O2";
+					}
+				
+				document.getElementById("resultado").innerHTML = "O reagente limitante é "+limitante+" que possui "+resultado+" gramas"+"<br> Para descobrir o reagente limitante, basta realizar uma regra de três para determinar qual reagente está abaixo da proporção de 1 mol de O2 para dois mols de H2. Após essa verificação, deve-se conhecer a massa do limitante, multiplicando seu número de mol pela massa molar do elemento. Por fim, procede-se uma regra de três entre a massa encontrada e as massas molares da água e do reagente limitante, afim de se encontrar a massa de água produzida (18g/mol).";
+
+				if(molH2==(2*molO2))
+						document.getElementById("resultado").innerHTML = "Não existe reagente limitante ou em excesso";
+			}
+
+			
+		</script>
+	</head>
+
+	<body>
+		<h3>Esta simulação é capaz de fazer correlações entre o reagente limitante da reação H2(mol) - O(mol) -> H2O(g) e a formação de um produto.Realize a simulação para ver como os calculos devem ser realizados.</h3>
+		<label>Insira o número de mol de O2 :</label>
+		<input type="number" id="molO2"/>
+		<label>Insira o número de mol de H2:</label>
+		<input type="number" id="molH2"/>
+		<button onclick="transforma()">Executar</button>
+		<h1 id="resultado"></h1>
+	</body>
+</html>
