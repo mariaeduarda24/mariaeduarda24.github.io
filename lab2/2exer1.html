@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Exercício 01</title>
+		<script type="text/javascript"> 
+			function inverter() {
+			var palavra = document.getElementById("palavra").value;
+            var novaPalavra = palavra.split('').reverse().join('');
+            document.getElementById("resultado").innerHTML = "A palavra invertida é: "+novaPalavra;
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1> Exercício 01</h1>
+		<h3>Faça um programa que leia uma frase e escreva abaixo invertendo os caracteres - o primeiro se torna o último, o segundo o penúltimo e assim por diante:</h3>
+		<h1 id="resultado"></h1>
+		<label>Insira a frase:</label>
+		<input type="text" id="palavra"/>
+		<button onclick="inverter()">Executar</button>
+	</body>
+</html>

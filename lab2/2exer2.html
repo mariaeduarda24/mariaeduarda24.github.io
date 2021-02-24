@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Exercício 02</title>
+		<script type="text/javascript">
+			function check(){
+     			var frase = document.getElementById("char").value;
+     			frase = frase.toLowerCase();
+     			var fraseFinal = "";
+     			for(i=0; i<=frase.length-1; i++){
+					if(frase[i]=='a' || frase[i]=='e' || frase[i]=='i' || frase[i]=='o' || frase[i]=='u')
+   			           fraseFinal += "<strong>"+frase[i]+"</strong>"; 
+   			        else
+   			        	fraseFinal += frase[i];
+
+   			        console.log(fraseFinal[i]);
+					}
+      			 document.getElementById("resultado").innerHTML = "A frase final é: "+fraseFinal;
+   		 	}
+ </script>
+			
+	</head>
+	<body>
+		<h1> Exercício 02</h1>
+		<h3>Faça um programa que leia uma frase e escreva abaixo marcando as vogais em negrito:</h3>
+		<p id="resultado"></p>
+		<label>Insira a frase:</label>
+		<input type="text" id="char"/>
+		<button onclick="check()">Executar</button>
+	</body>
+</html>
