@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Exercício 03</title>
-		<script type="text/javascript">
-			
-		</script>
-	</head>
-	<body>
-		<h1> Exercício 03</h1>
-		<h3>Faça um programa que leia um texto e separe todas as palavras em um array, indicado para cada uma delas o número de vezes que aparece no texto. Imprima o array em uma tabela contendo a palavra e número de ocorrências:</h3>
-		<h1 id="resultado"></h1>
-		<label>Primeiro número:</label>
-		<input type="number" id="numero1"/>
-		<label>Segundo número:</label>
-		<input type="number" id="numero2"/>
-		<button onclick="soma()">Executar</button>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 03</title>
+        <script type="text/javascript">
+            function Manipula(){
+                var texto = document.getElementById("texto").value;
+                var ocorrencias=[];
+                texto = texto.split(" ");
+                for(aux=0; aux<texto.length;aux++){
+                    ocorrencias[aux]=0;
+                }
+
+                for(i=0; i<texto.length;i++){
+                    for(j=0; j<texto.length;j++){
+                        if (texto[i]==texto[j]){
+                            ocorrencias[i]++;
+                        }
+                    }
+                }
+                console.log(ocorrencias);
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1> Exercício 03</h1>
+        <h3>Faça um programa que leia um texto e separe todas as palavras em um array, indicado para cada uma delas o número de vezes que aparece no texto. Imprima o array em uma tabela contendo a palavra e número de ocorrências:</h3>
+        <label>Insira o texto:</label>
+        <input type="text" id="texto"/>
+        <button onclick="Manipula()">Executar</button>
+        <h1 id="resultado"></h1>
+    </body>
 </html>

@@ -4,17 +4,47 @@
 		<meta charset="utf-8">
 		<title>Exercício 07</title>
 		<script type="text/javascript">
-			
+			function extenso() {
+			var data = document.getElementById("datareceb").value;;
+			var resultado = data.split("/");
+			var dia = resultado[0];
+			var mes = resultado[1];
+			var ano = resultado[2];
+			var mesExtenso;
+			if(mes=='01')
+				mesExtenso = 'janeiro';
+			else if(mes=='02')
+				mesExtenso = 'fevereiro';
+			else if(mes=='03')
+				mesExtenso = 'março';
+			else if(mes=='04')
+				mesExtenso = 'abril';
+			else if(mes=='05')
+				mesExtenso = 'maio';
+			else if(mes=='06')
+				mesExtenso = 'junho';
+			else if(mes=='07')
+				mesExtenso = 'julho';
+			else if(mes=='08')
+				mesExtenso = 'agosto';
+			else if(mes=='09')
+				mesExtenso = 'setembro';
+			else if(mes=='10')
+				mesExtenso = 'outubro';
+			else if(mes=='11')
+				mesExtenso = 'novembro';
+			else if(mes=='12')
+				mesExtenso = 'dezembro';
+			document.getElementById("resultado").innerHTML = dia+" de "+mesExtenso+" de "+ano;
+			}	
 		</script>
 	</head>
 	<body>
 		<h1> Exercício 07</h1>
-		<h3>.Faça um programa que leia uma data de nascimento em formato de dd/mm/aaaa e escreva por extenso a data. Por exemplo: 03/05/2017 vira "03 de maio de 2017":</h3>
+		<h3>Faça um programa que leia uma data de nascimento em formato de dd/mm/aaaa e escreva por extenso a data. Por exemplo: 03/05/2017 vira "03 de maio de 2017":</h3>
 		<h1 id="resultado"></h1>
-		<label>Primeiro número:</label>
-		<input type="number" id="numero1"/>
-		<label>Segundo número:</label>
-		<input type="number" id="numero2"/>
-		<button onclick="soma()">Executar</button>
+		<label>Insira a data de nascimento no formato dd/mm/aaaa:</label>
+		<input type="text" id="datareceb"/>
+		<button onclick="extenso()">Executar</button>
 	</body>
 </html>

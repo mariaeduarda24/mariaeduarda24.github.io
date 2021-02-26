@@ -4,17 +4,41 @@
 		<meta charset="utf-8">
 		<title>Exercício 08</title>
 		<script type="text/javascript">
+			function calculaData() {
+			var data1 = document.getElementById("data1").value;
+			var data2 = document.getElementById("data2").value;
+			var resultado1 = data1.split("/");
+			var dia1 = resultado1[0];
+			var mes1 = resultado1[1];
+			var ano1 = resultado1[2];
+
+			var resultado2 = data2.split("/");
+			var dia2 = resultado2[0];
+			var mes2 = resultado2[1];
+			var ano2 = resultado2[2];
+
+			var resposta = ((ano1-ano2)*365 + (mes1-mes2)*30 + (dia1-dia2))/7;
+			resposta=parseInt(resposta);
+			if(resposta>=1)
+            	document.getElementById("resultado").innerHTML = "A diferença é de "+resposta+" semanas.";
+            else if(resposta<=-1){
+            	resposta=resposta*-1;
+            	document.getElementById("resultado").innerHTML = "A diferença é de "+resposta+" semanas.";
+            }
+            else
+            	document.getElementById("resultado").innerHTML = "A diferença é de menos de uma semana."
+			}
 			
 		</script>
 	</head>
 	<body>
 		<h1> Exercício 08</h1>
 		<h3>Faça um programa que leia duas datas e indique em semanas a distância entre elas. Por exemplo: 02/05/2017 e 02/07/2017 resultado = 8 semanas:</h3>
+		<label>Insira a data no formato dd/mm/aaaa:</label>
+		<input type="text" id="data1"/><br>
+		<label>Insira a data no formato dd/mm/aaaa:</label>
+		<input type="text" id="data2"/>
+		<button onclick="calculaData()">Executar</button>
 		<h1 id="resultado"></h1>
-		<label>Primeiro número:</label>
-		<input type="number" id="numero1"/>
-		<label>Segundo número:</label>
-		<input type="number" id="numero2"/>
-		<button onclick="soma()">Executar</button>
 	</body>
 </html>

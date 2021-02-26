@@ -4,17 +4,30 @@
 		<meta charset="utf-8">
 		<title>Exercício 06</title>
 		<script type="text/javascript">
-			
+			function calculaData() {
+			var data = document.getElementById("datanasc").value;;
+			var resultado = data.split("/");
+			var dia = resultado[0];
+			var mes = resultado[1];
+			var ano = resultado[2];
+			var data = new Date();
+			var ano_atual = data.getFullYear();
+			var mes_atual = (data.getMonth()+1);
+			var dia_atual = data.getDate();
+			var resposta = (ano_atual-ano)*365 + (mes_atual-mes)*30 + (dia_atual-dia);
+			if(resposta>=0)
+            	document.getElementById("resultado").innerHTML = "Você viveu "+resposta+" dias.";
+            else
+            	document.getElementById("resultado").innerHTML = "Data inválida! Digite novamente."
+			}
 		</script>
 	</head>
 	<body>
 		<h1> Exercício 06</h1>
 		<h3>Faça um programa que leia uma data de nascimento e retorne quantos dias de vida a pessoa tem:</h3>
+		<label>Insira a data de nascimento no formato dd/mm/aaaa:</label>
+		<input type="text" id="datanasc"/>
+		<button onclick="calculaData()">Executar</button>
 		<h1 id="resultado"></h1>
-		<label>Primeiro número:</label>
-		<input type="number" id="numero1"/>
-		<label>Segundo número:</label>
-		<input type="number" id="numero2"/>
-		<button onclick="soma()">Executar</button>
 	</body>
 </html>
