@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<title>Terceiro Trimestre - Programação Cliente WEB</title>
+		<script>
+			function exibe(){
+				var texto = document.getElementById("array").value;
+					console.log(texto);
+				let meuArray = [];
+				meuArray = texto.split(", ");
+				for(i=0;i<meuArray.length;i++){
+					meuArray[i]=parseInt(meuArray[i]);
+				}
+					console.log(meuArray);
+				var valormin = Math.min.apply(Math, meuArray);
+					console.log(valormin);
+				var valormax = Math.max.apply(Math, meuArray);
+					console.log(valormax);
+				var arrayunico = [ ...new Set(meuArray)];
+					console.log(arrayunico);
+				var ordena = meuArray.sort(function(a, b){
+					if(a>b)	return 1;
+					if(a<b)	return -1;
+					return 0;
+				});
+					console.log(ordena);
+				var resposta ="O valor mínimo do array é "+ valormin+ "<br> O valor máximo do array é "+valormax+"<br> O array sem repetições é "+arrayunico+"<br> O array ordenado é "+ordena;
+				document.getElementById("result").innerHTML=resposta;
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Questão 1: Crie um scriptque implemente as funções min, max, uniq, sortNum. Tais funções devem: retornar o valor mínimo (min) e máximo (max)de um array de números, retornar o array sem repetições (uniq)e ordenar o arraynumérico (sortNum).</h3>
+		<h3>Digite números de um array separados por vírgula:</h3>
+		<input type="text" id="array"/>
+		<button onclick="javascript:exibe()">Executar</button>
+		<h2 id="result"></h2>
+	</body>
+</html>

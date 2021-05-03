@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			const lista =  [1, 2, 3, 4, 5, 6];
+			function exibeA()
+			{
+			var duplicar = lista.map(function double(item){return item*2;});
+			var resposta ="Os elementos duplicados são:  "+ duplicar;
+			document.getElementById("result1").innerHTML=resposta;
+			}
+
+			function evenElements(value)
+			{
+        		return value%2==0;
+			}
+			function exibeB()
+			{
+			var filtrar = lista.filter(evenElements);
+			var resposta ="Os elementos pares são:  "+ filtrar;
+			document.getElementById("result2").innerHTML=resposta;
+			}
+
+			function sum(anterior, atual)
+			{
+ 				return anterior + atual;
+			}
+
+			function exibeC()
+			{
+			var reduzir = lista.reduce((anterior, atual) => sum(anterior, atual), 0);
+			var resposta ="A soma de todos os valores é:  "+ reduzir;
+			document.getElementById("result3").innerHTML=resposta;
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<h3>Questão 3: Iterações em Arrays usando map, filter e reduce considere um array:const lista = [1, 2, 3, 4, 5, 6]<br>
+			a. Implemente uma função double(), que retorne o array com cada um dos elementos duplicado. A função deve usar map.<br>
+			b. Implemente uma função evenElements(), que retorne um array com apenas os elementos pares do array original. A função deve usar filter.<br>
+			c. Implemente uma função sum(), que retorne a soma de todos os elementos do array. A função deve usar reduce.</h3>
+		<h3>A) Esta função retorna o array [1, 2, 3, 4, 5, 6] com todos os elementos duplicados.</h3>
+		<button onclick="javascript:exibeA()">Executar</button>
+		<h2 id="result1"></h2>
+		<h3>B) Esta função retorna o array [1, 2, 3, 4, 5, 6] com apenas os elementos pares do array original.</h3>
+		<button onclick="javascript:exibeB()">Executar</button>
+		<h2 id="result2"></h2>
+		<h3>C) Esta função retorna a soma de todos os elementos do array [1, 2, 3, 4, 5, 6].</h3>
+		<button onclick="javascript:exibeC()">Executar</button>
+		<h2 id="result3"></h2>
+	</body>
+</html>
