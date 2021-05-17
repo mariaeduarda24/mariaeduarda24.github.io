@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function calcula(){
+			var numero1 = parseFloat(document.getElementById("n1").value);
+			var numero2 = parseFloat(document.getElementById("n2").value);
+			var operador = document.getElementById("operador").value;
+			var resultado = 0;
+			 if (operador=="+"){
+			 	resultado = numero1+numero2;
+			 }
+			 	else if (operador=="-"){
+			 		resultado = numero1-numero2;
+			 	}
+			 		else if (operador=="/"){
+			 			if(numero2!=0)
+			 				resultado = numero1/numero2;
+			 			else resultado ="Divisão por zero é impossivel"
+			 		}
+			 			else 
+			 				resultado = numero1*numero2;
+
+			 document.getElementById("resposta").innerHTML = resultado;
+		}
+	</script>
+</head>
+<body>
+	<h1>Calculadora</h1>
+		<label for="n1">Insira o primeiro número:</label>
+			<input type="number" name="n1" id="n1"><br>
+		<label for="n2">Insira o segundo número:</label>
+			<input type="number" name="n2" id="n2"><br>
+		<label for="operador">Selecione o operador aritmético:</label><br>
+			<select id="operador">
+				<option>+</option>
+				<option>-</option>
+				<option>*</option>
+				<option>/</option>
+			</select><br>
+  		<button onclick="calcula()">Executar</button>
+
+  		<p id="resposta"></p>
+</body>
+</html>

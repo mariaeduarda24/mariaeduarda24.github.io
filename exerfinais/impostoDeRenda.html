@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calcula Imposto de Renda</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function calcula(){
+			var salario = document.getElementById("salario").value;
+			var aliquota = 0;
+			var parcelaredutora = 0;
+			var taxa = 0;
+			if (salario>=1903.99&&salario<=2826.65){
+				aliquota = 7.5;
+				parcelaredutora = 142.8;
+				taxa = salario*aliquota/100-parcelaredutora;
+			}
+				else if(salario>=2826.66&&salario<=3751.05){
+					aliquota = 15;
+					parcelaredutora = 354.8;
+					taxa = salario*aliquota/100-parcelaredutora;
+				}
+					else if(salario>=3751.06&&salario<=4664.68){
+						aliquota = 22.5;
+						parcelaredutora = 636.13;
+						taxa = salario*aliquota/100-parcelaredutora;
+					}
+						else if(salario>4664.68){
+							aliquota = 27.5;
+							parcelaredutora = 869.36;
+							taxa = salario*aliquota/100-parcelaredutora;
+						}
+							else
+								taxa = salario*aliquota/100-parcelaredutora;
+			 document.getElementById("resposta").innerHTML = taxa.toFixed(2);
+
+
+			
+		}
+	</script>
+</head>
+<body>
+	<h1>Calcula Imposto de Renda</h1>
+		<label for="salario">Insira o salário:</label>
+			<input type="number" name="salario" id="salario"><br>
+  		<button onclick="calcula()">Executar</button>
+
+  		<p id="resposta"></p>
+</body>
+</html>

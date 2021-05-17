@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Criptografia</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function criptografa(){
+			var valida = false;
+			var alfabeto = [["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]];
+			var texto = document.getElementById("texto").value.toLowerCase();
+			var chave = parseInt(document.getElementById("chave").value);
+			for (var i=0;i<26; i++){
+				if(i+chave<=25)
+					alfabeto[1][i]=alfabeto[0][i+chave];
+				else
+					alfabeto[1][i]=alfabeto[0][i+chave-26];
+			}
+		
+			texto = texto.split('');
+			for (var i=0;i<texto.length;i++) {
+				j=0;
+				if(texto[i]==" "){
+					console.log("koe");
+					texto[i] = " ";
+
+				}
+					else{
+						while(texto[i]!=alfabeto[0][j]){
+							j=j+1;
+						}
+						texto[i]=alfabeto[1][j];
+
+					}
+			}
+			 var saida = texto.join('');
+
+			 document.getElementById("resposta").innerHTML = saida;
+			console.log(texto);
+
+			
+			 
+			
+		}
+	</script>
+</head>
+<body>
+	<h1>Criptografia</h1>
+		<label for="l">Insira o texto base:</label>
+			<input type="text" name="texto" id="texto"><br>
+		<label for="l">Insira a chave de rotação:</label>
+			<input type="number" name="chave" id="chave"><br>
+  		<button onclick="criptografa()">Executar</button>
+
+  		<p id="resposta"></p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificador De Triangulos</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function verifica(){
+			var valida = false;
+			a = parseFloat(document.getElementById("lado1").value);
+			b = parseFloat(document.getElementById("lado2").value);
+			c = parseFloat(document.getElementById("lado3").value);
+			console.log(a-b);
+			if (a>0&&b>0&&c>0){
+				console.log(1);
+				if((a>Math.abs(b-c)&&a<b+c)&&(b>Math.abs(a-c)&&b<a+c)&&(c>Math.abs(a-b)&&c<a+b)){
+					valida = true;
+				}
+			}
+
+
+			if (valida==true){
+				if(a==b&&a==c){
+					document.getElementById("resposta").innerHTML = "O triângulo é equilátero";
+				}
+					else if(a!=b&&a!=c&&b!=c){
+						document.getElementById("resposta").innerHTML = "O triângulo é escaleno";
+				}
+						else 
+							document.getElementById("resposta").innerHTML = "O triângulo é isósceles";
+			}
+				else
+					document.getElementById("resposta").innerHTML = "Erro";
+			 
+			
+
+
+			
+		}
+	</script>
+</head>
+<body>
+	<h1>Verificador de Triângulos</h1>
+		<label for="l">Insira o lado 1:</label>
+			<input type="number" name="l" id="lado1"><br>
+		<label for="l">Insira o lado  2:</label>
+			<input type="number" name="l" id="lado2"><br>
+		<label for="l">Insira o lado  3:</label>
+			<input type="number" name="l" id="lado3"><br>
+  		<button onclick="verifica()">Executar</button>
+
+  		<p id="resposta"></p>
+</body>
+</html>
